@@ -6,11 +6,8 @@ import { getALLCars } from "../redux/actions/action";
 
 const Home = () => {
   const { cars } = useSelector((state) => state.reducer);
-
   const { loading } = useSelector((state) => state.loading);
-
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getALLCars());
   }, [dispatch]);
