@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Layout from "../components/Layout";
@@ -36,6 +36,13 @@ const Register = () => {
       dispatch({ type: "LOADING", payload: false });
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("userInfo")) {
+      localStorage.getItem("userInfo");
+      navigate("/");
+    }
+  });
 
   return (
     <Layout>

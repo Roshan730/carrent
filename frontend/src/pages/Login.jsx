@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -11,19 +12,23 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
     dispatch({ type: "LOADING", payload: true });
+
     try {
-      const { user } = await axios.post("/api/users/login", {
+      const { data } = await axios.post("/api/users/login", {
         username,
         password,
       });
-      localStorage.setItem("user", JSON.stringify(user.data));
+      localStorage.setItem("userInfo", JSON.stringify(data));
+
       toast.success("Login SuccessFull");
+
       dispatch({ type: "LOADING", payload: false });
       navigate("/");
     } catch (error) {
@@ -32,6 +37,13 @@ const Login = () => {
       dispatch({ type: "LOADING", payload: false });
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("userInfo")) {
+      localStorage.getItem("userInfo");
+      navigate("/");
+    }
+  });
 
   return (
     <Layout>

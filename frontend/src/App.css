@@ -216,3 +216,8 @@
 .form-link:hover {
   text-decoration: underline;
 }
+
+.logout {
+  text-transform: uppercase;
+  margin-left: 15px;
+}

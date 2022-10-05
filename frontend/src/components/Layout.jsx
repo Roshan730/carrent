@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Layout = (props) => {
+  const navigate = useNavigate();
+
+  const userInfo = localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null;
+
   return (
     <>
       <div className="header">
@@ -10,7 +18,8 @@ const Layout = (props) => {
           </a>
         </div>
         <div className="col">
-          {/* <span className="name">Hlo</span> */}
+          <span className="name">{userInfo.username}</span>
+
           <a href="/login" className="login">
             Login
           </a>
