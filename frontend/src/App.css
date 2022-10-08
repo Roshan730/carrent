@@ -50,6 +50,7 @@
 }
 
 .slider {
+  justify-content: center;
   display: flex;
 }
 
