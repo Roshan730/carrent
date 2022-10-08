@@ -139,7 +139,6 @@
   padding: 5px 15px;
   background-color: #fff;
   box-shadow: 0 0 3px #000;
-  color: #000;
   cursor: pointer;
   display: flex;
   transition: all ease-in-out 0.5s;
@@ -150,6 +149,15 @@
 
 .rent-now:hover {
   background-color: #000;
+  color: #fff;
+}
+
+.rent-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.rent-link:hover {
   color: #fff;
 }
 
@@ -220,4 +228,131 @@
 .logout {
   text-transform: uppercase;
   margin-left: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
+
+.car-rentTitle {
+  text-align: center;
+  margin: 50px 0 50px 0;
+  font-size: 40px;
+}
+
+.car-row {
+  display: flex;
+}
+
+.car-col {
+  flex: 1;
+  margin-bottom: 100px;
+}
+
+.car-group {
+  margin-bottom: 25px;
+}
+
+.car-subtitle {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #a4a1a1;
+}
+
+.car-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-info span {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+
+.car-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: auto;
+  filter: drop-shadow(0 0 5px #111111);
+}
+
+.driver {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.driver input {
+  width: 20px;
+  height: 20px;
+}
+
+.driver label {
+  margin-left: 5px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.total {
+  margin-top: 25px;
+}
+
+.totalTitle {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.content-flex {
+  display: flex;
+  padding: 0 10px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.div-filter {
+  margin-bottom: 40px;
+}
+
+.filter-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-type {
+  padding: 5px 15px;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px #000000;
+  border: none;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin: 0 auto;
+}
+
+.btn-type:hover {
+  background-color: #afafaf;
+}
+
+.search {
+  height: 30px;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0 15px;
+  color: #afafaf;
+  border-bottom: 1px solid #afafaf;
 }

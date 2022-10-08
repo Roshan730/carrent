@@ -9,6 +9,12 @@ const Layout = (props) => {
     ? JSON.parse(localStorage.getItem("userInfo"))
     : null;
 
+  const logoutHandler = () => {
+    localStorage.removeItem("userInfo");
+    toast.success("You have successfully logged out !!!");
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="header">
@@ -18,11 +24,16 @@ const Layout = (props) => {
           </a>
         </div>
         <div className="col">
-          <span className="name">{userInfo.username}</span>
-
-          <a href="/login" className="login">
-            Login
-          </a>
+          <span className="name">{userInfo?.username}</span>
+          {userInfo ? (
+            <span onClick={logoutHandler} className="logout">
+              Logout
+            </span>
+          ) : (
+            <a href="/login" className="login">
+              Login
+            </a>
+          )}
         </div>
       </div>
       <div className="main">{props.children}</div>

@@ -2,6 +2,7 @@ const data = {
   cars: [
     {
       name: "BMW M8",
+      type: "BMW",
       image: "/images/cars/bmw_m8.png",
       payPerDay: 305,
       fuelType: "Petrol",
@@ -10,6 +11,7 @@ const data = {
     },
     {
       name: "BMW X1",
+      type: "BMW",
       image: "/images/cars/bmw_x1.png",
       payPerDay: 300,
       fuelType: "Petrol",
@@ -18,6 +20,7 @@ const data = {
     },
     {
       name: "BMW Z4",
+      type: "BMW",
       image: "/images/cars/bmw_z4.png",
       payPerDay: 250,
       fuelType: "Diesel",
@@ -26,6 +29,7 @@ const data = {
     },
     {
       name: "Ferrari F8",
+      type: "Ferrari",
       image: "/images/cars/ferrari_f8.png",
       payPerDay: 145,
       fuelType: "Petrol",
@@ -34,6 +38,7 @@ const data = {
     },
     {
       name: "Ferrari Roma",
+      type: "Ferrari",
       image: "/images/cars/ferrari_roma.png",
       payPerDay: 370,
       fuelType: "Diesel",
@@ -42,6 +47,7 @@ const data = {
     },
     {
       name: "Ferrari SF90",
+      type: "Ferrari",
       image: "/images/cars/ferrari_sf90.png",
       payPerDay: 425,
       fuelType: "Petrol",
@@ -50,6 +56,7 @@ const data = {
     },
     {
       name: "Mahindra Alturas",
+      type: "Mahindra",
       image: "/images/cars/Mahindra_Alturas.png",
       payPerDay: 285,
       fuelType: "Petrol",
@@ -58,6 +65,7 @@ const data = {
     },
     {
       name: "Tesla Cybertruck",
+      type: "Tesla",
       image: "/images/cars/Tesla_Cybertruck.png",
       payPerDay: 500,
       fuelType: "Electric",
@@ -66,6 +74,7 @@ const data = {
     },
     {
       name: "Tesla X",
+      type: "Tesla",
       image: "/images/cars/tesla_x.png",
       payPerDay: 300,
       fuelType: "Electric",
@@ -74,12 +83,19 @@ const data = {
     },
     {
       name: "Thar",
+      type: "Mahindra",
       image: "/images/cars/thar.png",
       payPerDay: 350,
       fuelType: "Petrol/Diesel",
       bookedTimeSlots: "",
       capacity: 5,
     },
+  ],
+  category: [
+    { type: "BMW" },
+    { type: "Ferrari" },
+    { type: "Mahindra" },
+    { type: "Tesla" },
   ],
 };
 

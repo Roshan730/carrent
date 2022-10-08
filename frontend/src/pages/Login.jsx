@@ -26,9 +26,7 @@ const Login = () => {
         password,
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
-
       toast.success("Login SuccessFull");
-
       dispatch({ type: "LOADING", payload: false });
       navigate("/");
     } catch (error) {

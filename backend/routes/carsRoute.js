@@ -8,4 +8,15 @@ carsRouter.get("/getall", async (req, res) => {
   res.send(cars);
 });
 
+//get car by id
+
+carsRouter.get("/car/:carId", async (req, res) => {
+  const car = await Cars.findById({ _id: req.params.carId });
+  if (car) {
+    res.send(car);
+  } else {
+    res.status(404).send({ message: "Car not found" });
+  }
+});
+
 export default carsRouter;
