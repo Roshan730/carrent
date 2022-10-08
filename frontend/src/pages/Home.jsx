@@ -3,11 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
-import { DatePicker } from "antd";
 import { getALLCars } from "../redux/actions/action";
-import axios from "axios";
-
-// const { RangePicker } = DatePicker;
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,7 +11,6 @@ const Home = () => {
   const { cars } = useSelector((state) => state.reducer);
   const { loading } = useSelector((state) => state.loading);
   const [totalCar, setTotalCar] = useState([]);
-  const [category, setCategory] = useState([]);
   const [search, setSearch] = useState("");
 
   console.log(cars);
@@ -33,34 +28,7 @@ const Home = () => {
     setTotalCar(cars);
   }, [cars, navigate, dispatch]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get("/api/category");
-      console.log(result.data);
-      setCategory(result.data);
-    };
-    fetchData();
-  }, []);
-
-  // const setFilter = () => {
-  //   var temp = [];
-
-  //   for (var car of totalCar) {
-  //     if (car.bookedTimeSlots.length === 0) {
-  //       temp.push(car);
-  //     }
-  //   }
-  //   setTotalCar(temp);
-  // };
-
-  // const filterResult = (catItem) => {
-  //   const catResult = totalCar.filter((curCat) => {
-  //     return curCat.type === catItem;
-  //   });
-  //   setTotalCar(catResult);
-  // };
-
-  const keys = ["type", "name"];
+  const keys = ["name"];
 
   const query = () => {
     return totalCar.filter((item) =>
@@ -97,31 +65,6 @@ const Home = () => {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            {/* <div className="div-filter">
-              <h2 className="car-subtitle">***Filter for Availability***</h2>
-              <RangePicker
-                showTime={{ format: "HH:mm" }}
-                format="YYYY-MM-DD-HH:mm:ss"
-                onChange={setFilter}
-              />
-            </div> */}
-            {/* <div className="div-fliter">
-              <h2 className="car-subtitle">***Filter by type***</h2>
-              <div className="filter-btns">
-                <button className="btn-type" onClick={() => setTotalCar(cars)}>
-                  All
-                </button>
-                {category.map((cat) => (
-                  <button
-                    className="btn-type"
-                    key={cat._id}
-                    onClick={() => filterResult(cat.type)}
-                  >
-                    {cat.type}
-                  </button>
-                ))}
-              </div>
-            </div> */}
           </div>
           <div className="content-row flex-2">
             {loading ? (

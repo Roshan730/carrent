@@ -63,12 +63,10 @@ const Car = ({ match }) => {
       totalDays,
       total,
       driverRequired: driver,
-      bookedTimeSlots: [
-        {
-          from,
-          to,
-        },
-      ],
+      bookedTimeSlots: {
+        from,
+        to,
+      },
     };
     dispatch(rentCar(reqObj));
     navigate("/");

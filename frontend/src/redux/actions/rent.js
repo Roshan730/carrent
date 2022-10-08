@@ -1,8 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const rentCar = (reqObj) => async dispatch => {
-
+export const rentCar = (reqObj) => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });
 
   try {
